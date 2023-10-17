@@ -16,7 +16,7 @@ npx prisma db push
 npx prisma generate client
 ```
 
-Secondly, we have to make sure that we have an OpenAI API key. You can get one by signing up on [OpenAI](https://beta.openai.com/). After that, we can create a `.env` file and put the API key in there.
+Secondly, we have to make sure that we have an OpenAI API key. You can get one by signing up on [OpenAI](https://openai.com/). After that, we can create a `.env` file and put the API key in there.
 
 ```bash
 # .env
