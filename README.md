@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a standard Next.js + Prisma + TailwindCSS + TypeScript project setup, which I used to connect with OpenAI and experiment with making Q&A on top of the existing Relational database.
 
 ## Getting Started
 
-First, run the development server:
+Don't forget to install packages first, before running the development server 🙌
 
 ```bash
+# Install packages
+npm i
+```
+
+First, we have to make sure that we have Prisma generated and DB file created. By default, this project uses SQLite for the simplicity of setup in the development process. You can change the DB to Postgres or MySQL by following the [Prisma documentation](https://www.prisma.io/docs/concepts/database-connectors).
+
+```bash
+npx prisma db push
+npx prisma generate client
+```
+
+Secondly, we have to make sure that we have an OpenAI API key. You can get one by signing up on [OpenAI](https://beta.openai.com/). After that, we can create a `.env` file and put the API key in there.
+
+```bash
+# .env
+
+OPENAI_API_KEY=<YOUR_API_KEY>
+```
+
+Lastly, we can run the development server.
+
+```bash
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
